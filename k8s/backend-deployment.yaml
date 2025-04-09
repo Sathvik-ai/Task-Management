@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deploy-2022bcd0028
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: 2022bcd0028-sathvik-kiran-backend
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_HOST
+          value: mysql-service-2022bcd0028
+        - name: DB_USER
+          value: root
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret-2022bcd0028
+              key: password
+        - name: DB_NAME
+          value: taskdb
