@@ -74,7 +74,3 @@ This is a full-stack task management application built with React, Supabase, and
 - Icons: Lucide React
 - Database: Supabase (can be migrated to MySQL for Kubernetes deployment)
 - Deployment: Kubernetes/Minikube
-
-## Contact
-
-Sathvik Kiran (2022bcd0028)
